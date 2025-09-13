@@ -11,12 +11,15 @@ function isAuthorized(request: Request) {
   return authHeader === `Bearer ${fakeToken}`;
 }
 
-
+type LoginBody = {
+  username: string;
+  password: string;
+};
 
 export const handlers = [
 
     http.post("/login", async ({ request }) => {
-    const body = await request.json();
+    const body = await request.json() as LoginBody;
 
     if (body?.username === "test" && body?.password === "test123") {
       return HttpResponse.json({ token: fakeToken }, { status: 200 });

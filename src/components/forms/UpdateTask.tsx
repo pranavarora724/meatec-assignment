@@ -42,11 +42,13 @@ const UpdateTask: React.FC<UpdateTaskProps> = ({ task, onClose, toggleApiLoader 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
     setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+    ...prev,
+    [name]: type === "checkbox" && "checked" in e.target
+      ? (e.target as HTMLInputElement).checked
+      : value,
+  }));
 
     // clear error on typing
     setErrors((prev) => ({ ...prev, [name]: "" }));

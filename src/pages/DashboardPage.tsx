@@ -3,11 +3,12 @@ import CreateTask from "@/components/forms/CreateTask";
 import Modal from "@/components/Modal";
 import Navbar from "@/components/Navbar";
 import SingleTask from "@/components/SingleTask";
+import type { Task } from "@/types";
 import { useEffect, useState } from "react";
 
 function DashboardPage() {
   const [addCourseModal, setAddCoureModal] = useState(false);
-  const [tasksList, setTasksList] = useState([]);
+  const [tasksList, setTasksList] = useState<Task[]>([]);
   const [apiLoader , setApiLoader] = useState(false);
 
   useEffect(() => {
