@@ -21,6 +21,11 @@ Clone the repository:
 git clone https://github.com/pranavarora724/meatec-assignment.git
 cd meatec-assignment
 
+```
+
+Install dependencies
+
+```bash
 # with npm
 npm install
 
@@ -29,3 +34,4 @@ yarn install
 
 # or with pnpm
 pnpm install
+```
