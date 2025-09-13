@@ -35,3 +35,21 @@ yarn install
 # or with pnpm
 pnpm install
 ```
+
+▶️ Running Locally
+
+```bash
+# with npm
+npm run dev
+
+# or with yarn
+yarn dev
+
+# or with pnpm
+pnpm dev
+```
+Now open your browser and navigate to:
+
+```bash
+http://localhost:5173/
+```
