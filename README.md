@@ -105,3 +105,25 @@ meatec/
 ├── tsconfig.node.json
 ├── vite.config.ts
 ```
+
+## 🛠️ Mocked API Endpoints
+
+The following endpoints are mocked using [Mock Service Worker (msw)](https://mswjs.io/):
+
+- `POST /login` — Authenticates a user and returns a fake JWT token.
+- `GET /tasks` — Returns the list of tasks (requires Authorization header).
+- `POST /tasks` — Adds a new task (requires Authorization header).
+- `PUT /tasks/:id` — Updates an existing task by ID (requires Authorization header).
+- `DELETE /tasks/:id` — Deletes a task by ID (requires Authorization header).
+
+---
+
+## ⚙️ How Backend Mocking Works
+
+- All API mocks are defined in `src/mocks/handlers.ts` using `msw`'s `http` methods.
+- The handlers use the in-memory `TaskStore` for task data and a hardcoded token for authentication.
+- The mock server is started in the browser using `src/mocks/browser.ts`:
+  ```ts
+  import { setupWorker } from "msw/browser";
+  import { handlers } from "./handlers";
+  export const worker = setupWorker(...handlers);
