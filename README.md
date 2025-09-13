@@ -5,14 +5,6 @@ It provides a fast development experience with modern frontend tooling.
 
 ---
 
-## 🚀 Features
-- ⚡️ Lightning-fast dev server with Hot Module Replacement (HMR)
-- 📘 Fully typed with TypeScript
-- 🎨 Tailwind CSS support (optional, remove if not used)
-- 🛠️ Easy to extend and customize
-
----
-
 ## 📦 Prerequisites
 Before running the project, make sure you have the following installed:
 
@@ -26,5 +18,14 @@ Before running the project, make sure you have the following installed:
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/pranavarora724/meatec-assignment.git
+cd meatec-assignment
+
+# with npm
+npm install
+
+# or with yarn
+yarn install
+
+# or with pnpm
+pnpm install
