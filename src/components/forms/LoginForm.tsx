@@ -15,7 +15,6 @@ export default function LoginForm() {
 
   const [showPassword, setShowPassword] = useState(false); // 👈 toggle state
 
-  const token = AuthStore((s) => s.token);
   const setToken = AuthStore((s) => s.setToken);
   const navigate = useNavigate();
 
